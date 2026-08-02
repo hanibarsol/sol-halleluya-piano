@@ -795,19 +795,12 @@
         let whiteW = Math.floor(containerWidth / totalWhiteKeys);
         whiteW = Math.max(24, Math.min(whiteW, 150));
 
-        // Split the space left after the speed bar/chrome roughly evenly
-        // between video and piano — but never let the piano take so much
-        // height that the video area's aspect ratio goes far past 16:9.
-        // On a wide-but-short window, giving the piano a flat 50% used to
-        // squeeze the video into a sliver, which YouTube then pillarboxes
-        // (black bars on the sides) since it keeps the video's real aspect.
         const chromeH = 130;
         const availableH = Math.max(320, window.innerHeight - chromeH);
-        // Standing rule across every song page: video gets ~45% of the
-        // available height, piano gets ~55% — a fixed split kept consistent
-        // site-to-site. If a specific video's own aspect ratio still causes
-        // trouble, handle that on its own page rather than bending this.
-        const maxKeyH = Math.max(160, availableH * 0.55);
+        // Page-specific override for this song only (the other song pages
+        // keep the standard 45% video / 55% piano split): here the piano
+        // gets ~45% and the video ~55%, per an explicit per-lesson request.
+        const maxKeyH = Math.max(160, availableH * 0.45);
         let keyH = whiteW * 3.2;
         if (keyH > maxKeyH) {
             keyH = maxKeyH;
