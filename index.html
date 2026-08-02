@@ -423,10 +423,8 @@
         setTimeout(() => { calibCopyBtn.textContent = 'העתק תוצאות'; }, 2500);
     });
 
-    // No calibrated song for "הללויה" yet — leave empty so the due/correct
-    // feedback logic below simply never triggers, without disabling it.
-    const songTimes = [];
-    const songLetters = [];
+    const songTimes = [5.06, 6.09, 6.83, 8.35, 11.66, 12.40, 13.13, 14.73, 17.93, 19.08, 19.81, 21.40, 24.61, 25.48, 26.35, 28.45, 29.26, 29.99, 32.57];
+    const songLetters = ['B', 'D', 'E', 'E', 'E', 'D', 'B', 'B', 'B', 'D', 'E', 'E', 'E', 'D', 'B', 'C', 'B', 'A', 'G'];
     const songNotes = songTimes.map((t, i) => ({ time: t, note: songLetters[i] + '4' }));
 
     const NOTE_LEAD = 0.6;
