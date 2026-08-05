@@ -182,7 +182,7 @@
         }
         .note-lane-col:last-child { border-right: none; }
         #note-lane-hitline {
-            position: absolute; left: 0; right: 0; bottom: 32px; height: 4px;
+            position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
             border-radius: 2px;
             background: linear-gradient(90deg, #29c98f, #baf7d9, #29c98f);
             box-shadow: 0 0 9px rgba(41,201,143,0.8), inset 0 0 2px rgba(255,255,255,0.6);
@@ -903,7 +903,7 @@
         // head rather than being met by its feet.
         const whiteWpx = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--white-w')) || 0;
         const tileSize = whiteWpx * 0.74;
-        const landTop = Math.max(0, laneH - 32 - tileSize);
+        const landTop = Math.max(0, laneH - tileSize);
         songNotes.forEach((n, i) => {
             const letter = n.note[0];
             const col = laneCols[letter];
