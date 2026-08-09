@@ -681,6 +681,11 @@
             playerVars: { playsinline: 1, rel: 0 },
             events: {
                 onReady: () => {
+                    // This lesson's video is Hani's own playing, not singing —
+                    // audible at the same time as the child's own piano it just
+                    // reads as confusing noise, so it stays muted permanently
+                    // (no toggle, nothing to opt into).
+                    player.mute();
                     if (pendingPlay) player.playVideo();
                 },
                 onStateChange: (e) => {
