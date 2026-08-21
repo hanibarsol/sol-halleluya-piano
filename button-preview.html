@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+<title>השוואת כפתורים</title>
+<style>
+    html, body {
+        margin: 0; padding: 0; background: #111; color: #fff;
+        font-family: Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+    }
+    .label {
+        padding: 14px 14px 6px;
+        font-size: 15px; font-weight: bold; color: #6fd6c9;
+    }
+    .note { padding: 0 14px 10px; font-size: 13px; color: #aaa; line-height: 1.5; }
+
+    /* בדיוק אותם חוקים כמו בשיעור, כדי שמה שרואים כאן הוא מה שיהיה שם */
+    .mode-bar {
+        display: flex; flex-wrap: wrap;
+        justify-content: center; align-items: center;
+        gap: 8px; padding: 8px 10px; background: #1a1a1a;
+    }
+    @media (max-width: 640px) { .mode-bar { padding-left: 60px; } }
+    .mode-bar button {
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 20px;
+        padding: 9px 20px;
+        font-size: 15px;
+        font-family: Arial, sans-serif;
+        background: #262626; color: #fff;
+        cursor: pointer; white-space: nowrap;
+    }
+    .mode-bar button.solo.active { background: #6fd6c9; color: #0a1210; border-color: #6fd6c9; font-weight: bold; }
+
+    /* אפשרות א: אותן מילים, מסגרת מהודקת */
+    .opt-a button { padding: 9px 12px; font-size: 14px; }
+
+    /* אפשרות ב: מילים קצרות, גופן גדול יותר */
+    .opt-b button { padding: 10px 22px; font-size: 16px; }
+
+    .home {
+        position: absolute; top: 8px; right: auto; left: 8px;
+        width: 44px; height: 44px; border-radius: 50%;
+        background: #17A79B; display: flex; align-items: center; justify-content: center;
+    }
+    .home svg { width: 22px; height: 22px; }
+    .frame { position: relative; border-top: 1px solid #333; }
+    .foot { padding: 18px 14px 40px; font-size: 13px; color: #888; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<div class="label">עכשיו — כמו שזה באתר</div>
+<div class="note">שני הכפתורים לא נכנסים לשורה אחת, ולכן אחד יורד מתחת לשני.</div>
+<div class="frame">
+    <div class="home"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></div>
+    <div class="mode-bar">
+        <button>🎵 ככה השיר נשמע</button>
+        <button class="solo">אני רוצה לנסות לבד</button>
+    </div>
+</div>
+
+<div class="label">אפשרות א — אותן מילים בדיוק</div>
+<div class="note">המילים לא משתנות. רק המסגרת סביבן מתהדקת, והגופן קטן במעט (15 ← 14).</div>
+<div class="frame">
+    <div class="home"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></div>
+    <div class="mode-bar opt-a">
+        <button>🎵 ככה השיר נשמע</button>
+        <button class="solo">אני רוצה לנסות לבד</button>
+    </div>
+</div>
+
+<div class="label">אפשרות ב — מילים קצרות</div>
+<div class="note">נכנסים בנוחות, והגופן דווקא גדל (15 ← 16) במקום להצטמצם.</div>
+<div class="frame">
+    <div class="home"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></div>
+    <div class="mode-bar opt-b">
+        <button>🎵 להאזין</button>
+        <button class="solo">🎹 לנסות לבד</button>
+    </div>
+</div>
+
+<div class="label">אפשרות ב — איך זה נראה כשהמצב פעיל</div>
+<div class="note">כשלוחצים על "לנסות לבד" הוא נדלק בטורקיז, כמו היום.</div>
+<div class="frame">
+    <div class="home"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></div>
+    <div class="mode-bar opt-b">
+        <button>🎵 להאזין</button>
+        <button class="solo active">🎹 חזרה לתרגול</button>
+    </div>
+</div>
+
+<div class="foot">
+    זהו עמוד תצוגה בלבד. הוא לא חלק מהשיעור, אף אחד לא מגיע אליו,
+    ואני מוחקת אותו ברגע שתחליטי.
+</div>
+
+</body>
+</html>
